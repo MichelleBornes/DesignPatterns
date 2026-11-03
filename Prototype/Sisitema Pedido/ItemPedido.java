@@ -1,0 +1,31 @@
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+public class ItemPedido implements Serializable {
+    private String produto;
+    private int quantidade;
+    private BigDecimal precoUnitario;
+
+    public ItemPedido(String produto, int quantidade, BigDecimal precoUnitario) {
+        this.produto = produto;
+        this.quantidade = quantidade;
+        this.precoUnitario = precoUnitario;
+    }
+
+    // RF03: Construtor de cópia para cópia profunda
+    public ItemPedido(ItemPedido origem) {
+        this.produto = origem.produto;
+        this.quantidade = origem.quantidade;
+        this.precoUnitario = origem.precoUnitario;
+    }
+
+    // RF02: Subtotal
+    public BigDecimal subtotal() {
+        return precoUnitario.multiply(BigDecimal.valueOf(quantidade));
+    }
+
+    public String getProduto() { return produto; }
+    public int getQuantidade() { return quantidade; }
+    public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
+    public BigDecimal getPrecoUnitario() { return precoUnitario; }
+}
