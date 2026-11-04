@@ -21,7 +21,7 @@ O primeiro exemplo demonstra uma calculadora que permite alternar entre diferent
 **Estratégias implementadas:**
 - `AddStrategy`: realiza adição.
 - `SubtractStrategy`: realiza subtração.
-- `MultiplyStrategy`: realiza multiplicação.
+- `DivideStrategy`: realiza divisão.
 
 O `Context` recebe uma estratégia e executa a operação correspondente. Também permite trocar a estratégia durante a execução utilizando `setStrategy()`.
 
